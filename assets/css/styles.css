@@ -32,6 +32,17 @@ html body {
 a {
     text-decoration: none;
 }
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp.line-2 {
+    --line-clamp: 2;
+}
 /* END COMMON */
 
 .header-sticky {
@@ -103,11 +114,15 @@ a {
     padding: 12px 0;
 }
 
+.nav .btn-sign-up:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 /* ========= HERO ============== */
 .hero {
     padding: 64px 0;
-    /* background-color: #fffcf4; */
-    background-color: orange;
+    background-color: #fffcf4;
 }
 
 .hero .content-hero {
@@ -222,6 +237,7 @@ a {
     margin-right: 14px;
     background: #fff;
     border-radius: 50%;
+    color: var(--primary-color);
 }
 
 .main-hero .cta-watch .text {
@@ -261,3 +277,135 @@ a {
 }
 
 /* kiểm tra lại kích thước background của icon */
+
+/* ========= POPULAR ============== */
+.popular {
+    margin-top: 200px;
+}
+
+.popular .intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular .info-intro .header {
+    color: #171100;
+    font-family: "Sen", sans-serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.263;
+    letter-spacing: -0.76px;
+}
+
+.popular .info-intro .desc {
+    margin-top: 16px;
+    width: 458px;
+    color: #5F5B53;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67;
+}
+
+.popular .intro .control-nav {
+    display: flex;
+    gap: 18px;
+}
+
+.popular .control-nav .control-btn {
+    font-size: 16px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    padding: 10px 11px;
+    color: var(--primary-color);
+    border:1px solid var(--primary-color);
+}
+
+.popular .control-nav .control-btn:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.popular .course-list {
+    display: flex;
+    margin-top: 55px;
+    gap: 30px;
+}
+
+.popular .course-list .course-item {
+    flex: 1;
+    border-radius: 12px;
+    border: 1px solid #E2DFDA;
+}
+
+.popular .course-list .course-item:hover {
+    border-color: transparent;
+    box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
+}
+
+.popular .course-item .uplash {
+    width: calc(100% + 2px);
+    height: 278px;
+    margin-left: -1px;
+    object-fit: cover;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.popular .course-item .info {
+    padding: 16px 22px 22px;
+}
+
+.course-item .info .header-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-item .header-info .header {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67;
+}
+
+.course-item .header-info .rating {
+    display: flex;
+    align-items: center;
+}
+
+.course-item .header-info .rating-header {
+    margin-left: 6px;
+    color:  #FEA31B;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+.course-item .info .desc {
+    color: #5F5B53;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.875;
+}
+
+.course-item .info .footer {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.course-item .info .value {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67;
+}
+
+.course-item .info .book-btn:hover {
+    color: #fff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    cursor: pointer;
+}
