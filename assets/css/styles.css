@@ -29,6 +29,11 @@ html body {
     border: 1px solid var(--color-btn, #171100);
 }
 
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
 a {
     text-decoration: none;
 }
@@ -112,11 +117,6 @@ a {
 .nav .btn-sign-up {
     width: 144px;
     padding: 12px 0;
-}
-
-.nav .btn-sign-up:hover {
-    opacity: 0.8;
-    cursor: pointer;
 }
 
 /* ========= HERO ============== */
@@ -301,7 +301,7 @@ a {
 .popular .info-intro .desc {
     margin-top: 16px;
     width: 458px;
-    color: #5F5B53;
+    color: #5f5b53;
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 1.67;
@@ -319,13 +319,12 @@ a {
     display: flex;
     padding: 10px 11px;
     color: var(--primary-color);
-    border:1px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 .popular .control-nav .control-btn:hover {
     color: #fff;
     background-color: var(--primary-color);
-    cursor: pointer;
 }
 
 .popular .course-list {
@@ -337,7 +336,7 @@ a {
 .popular .course-list .course-item {
     flex: 1;
     border-radius: 12px;
-    border: 1px solid #E2DFDA;
+    border: 1px solid #e2dfda;
 }
 
 .popular .course-list .course-item:hover {
@@ -372,18 +371,19 @@ a {
 .course-item .header-info .rating {
     display: flex;
     align-items: center;
+    padding-left: 6px;
 }
 
 .course-item .header-info .rating-header {
     margin-left: 6px;
-    color:  #FEA31B;
+    color: #fea31b;
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.75;
 }
 
 .course-item .info .desc {
-    color: #5F5B53;
+    color: #5f5b53;
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.875;
@@ -407,5 +407,413 @@ a {
     color: #fff;
     background: var(--primary-color);
     border-color: var(--primary-color);
-    cursor: pointer;
+}
+
+/* ========= FEEDBACKS ============== */
+.feedback {
+    margin-top: 200px;
+    padding: 96px 0;
+    background: #2e2100;
+}
+
+.feedback .feedback-list {
+    display: flex;
+    overflow: hidden;
+}
+
+.feedback .feedback-list .feedback-item {
+    display: flex;
+    width: 100%;
+    flex-shrink: 0;
+    justify-content: space-between;
+    transform: translateX(-100%);
+    transition: all ease 0.3s;
+    /* hiệu ứng chuyển */
+}
+
+.feedback .feedback-item .avatar {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.feedback .feedback-item p.title {
+    margin-top: 18px;
+    color: #f7f7f7;
+    font-family: "Sen", sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.41;
+}
+
+.feedback .feedback-item p.desc {
+    margin-top: 4px;
+    color: #bfbcb2;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.857;
+}
+
+.feedback .feedback-item .dots {
+    margin-top: 28px;
+    display: flex;
+    gap: 6px;
+}
+
+.feedback .feedback-item .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #634700;
+}
+
+.feedback .feedback-item .dot.active {
+    background: #ffb900;
+}
+
+.feedback .feedback-item .desc-feedback {
+    width: 66%;
+}
+
+.feedback-item blockquote {
+    padding-left: 30px;
+    color: #fff;
+    font-size: 2.6rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.53;
+}
+
+/* ========= FEATURES ============== */
+.features {
+    margin: 200px 0;
+}
+
+.features .feature-up {
+    display: flex;
+}
+
+.features .feature-up .thumb:first-child {
+    padding: 34px 30px 0 0;
+}
+
+.features .feature-up .thumb:nth-child(2) {
+    padding: 0 0 33px;
+}
+
+/* Nhớ đặt width height cho hình ảnh 
+và thuộc tính object-fit: cover; để phòng
+trường hợp hình ảnh quá nhỏ/lớn so với 
+kích thước quy định của thiết kế */
+
+.features .feature-up .info {
+    width: 40.17%;
+    margin-left: 132px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* đẩy dồn các elements sang hướng bắt đàu, làm mất
+    tính chất block */
+    justify-content: center;
+    /* khi đảo trục bằng flex-direction nên lưu ý 2 thuộc
+    tính align-items và justify-content cũng sẽ đảo trục */
+}
+
+.features .info .header {
+    color: #171100;
+    font-family: "Sen", sans-serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.263;
+    letter-spacing: -0.8px;
+}
+
+.features .info .desc {
+    margin-top: 16px;
+    color: #5f5b53;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.263;
+}
+
+.features .info .btn {
+    margin-top: 32px;
+    min-width: 137px;
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+/* Cách xử lý khách của khối feature-down
+    - cấu trúc html thì giống feature-up chỉnh sửa
+    cho đúng với project
+    - sử dụng flex-direction: row-reverse; đảo ngược
+    vị trí các vị trí trên 1 hàng.
+*/
+
+.features .feature-down {
+    margin-top: 200px;
+    display: flex;
+}
+
+.features .feature-down .info {
+    padding-top: 71px;
+    width: 48.72%;
+}
+
+.features .feature-down .thumb-3 {
+    margin-left: auto;
+}
+
+/* ========= BLOG ============== */
+.blog {
+    padding: 96px 0;
+}
+
+.blog .header-blog .title {
+    color: #130606;
+    text-align: center;
+    font-family: "Sen", sans-serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.263; /* 126.316% */
+    letter-spacing: -0.76px;
+}
+
+.blog .header-blog .desc {
+    width: 448px;
+    margin: 0 auto;
+    color: #696262;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.75; /* 175% */
+}
+
+.blog .blog-trans-list {
+    display: flex;
+    overflow: hidden;
+}
+
+.blog .blog-trans-list .blog-transfer {
+    width: 100%;
+    flex-shrink: 0;
+    /* transform: translateX(-100%);
+    transition: all ease 0.3s; */
+}
+
+.blog .blog-transfer .blog-list {
+    margin-top: 55px;
+    display: flex;
+    gap: 30px;
+}
+
+.blog-transfer .blog-list .blog-item {
+    border-radius: 16px;
+}
+
+.blog-list .blog-item .thumb {
+    width: 370px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.blog-list .blog-item .info {
+    padding: 20px 20px 28px;
+}
+
+.blog-item .info .date {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.blog-item .info .date span.dot {
+    display: inline-block;
+    margin-right: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
+.blog-item .info .date .days {
+    color: #5F5B53;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.857; /* 185.714% */
+}
+
+.blog-item .info .date::after {
+    content: "";
+    display: block;
+    position: absolute;
+    /* width: 160px; */
+    bottom: -12px;
+    left: 0;
+    height: 1px;
+    right: -27px;
+    background: #E2DFDA;
+}
+
+.blog-item .info .desc-info {
+    margin-top: 25px;
+    color: #171100;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.75; /* 175% */
+}
+
+.blog-item .info .btn {
+    margin-top: 12px;
+}
+
+.blog-item .info .btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.blog-transfer .dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.blog-transfer .dots .dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: #5F5B53;
+    border-radius: 50%;
+}
+
+.blog-transfer .dots .dot.active {
+    background: var(--primary-color);
+}
+
+/* ============== FOOTER ================ */
+footer.footer {
+    background: #2E2100;
+    padding: 96px 0 28px;
+}
+
+footer.footer .row-top {
+    display: flex;
+    gap: 145px;
+    position: relative;
+}
+
+footer.footer .row-top .column-1 {
+    width: 22.82%;
+}
+
+.row-top .column-1 .lesson {
+    line-height: 34px;
+}
+
+.row-top .column-1 .desc-1 {
+    margin: 18px 0;
+    color: #BFBCB2;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.857; /* 185.714% */
+}
+
+.row-top .column-1 .social {
+    display: flex;
+    gap: 17px;
+    font-size: 15px;
+}
+
+.column-1 .social a {
+    color: #fff;
+
+}
+
+.row-top .column-2 {
+    display: flex;
+    gap: 130px;
+    width: 67.6%;
+}
+
+.row-top .column-2 .column-comp,
+.row-top .column-2 .column-sup,
+.row-top .column-2 .column-addr {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-top .column-2 .column-comp {
+    min-width: 130px;
+}
+
+.row-top .column-2 .column-sup {
+    min-width: 137px;
+}
+
+.row-top .column-2 .column-addr {
+    min-width: 231px;
+}
+
+.row-top .column-2 .header {
+    position: relative;
+    color: #FFF;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.75; /* 175% */
+}
+
+.row-top .column-2 .header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -14px;
+    width: 130px;
+    height: 1px;
+    background: #59554B;
+}
+
+.row-top .column-2 .nav-text {
+    margin-top: 42px;
+}
+
+.column-2 .nav-text li ~ li {
+    margin-top: 12px;
+}
+
+.column-2 .nav-text .text {
+    color: #BFBCB2;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.8571; /* 185.714% */
+}
+
+.column-2 .nav-text strong {
+    color: #FFF;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.8571; /* 185.714% */
+}
+
+footer.footer .row-top::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -38px;
+    background: #59554B;
+}
+
+footer.footer .row-footer {
+    margin-top: 67px;
+}
+
+.row-footer .title-footer {
+    color: #807D74;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px; /* 185.714% */
 }
